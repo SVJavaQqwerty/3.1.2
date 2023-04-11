@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Create user</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:each="user : ${users}">
+    <p th:text="${user.id}"/>
+    <p th:text="${user.name}"/>
+    <p th:text="${user.lastName}"/>
+    <p th:text="${user.email}"/>
+    <a href="/user">Пользователи</a>
+    <a th:href="'/user/' + ${user.id} + '/edit'">Редактировать</a>
+  <form th:action="${user.id} + '/remove'" method="post">
+    <button type="submit">Удалить</button>
+  </form>
+</div>
+
+
+</body>
+</html>

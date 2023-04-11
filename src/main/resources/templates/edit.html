@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create user</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:each="user : ${users}">
+    <form method="post">
+       <!-- <input type="text" th:value="${user.id}" name="id"/>-->
+        <input type="text" th:value="${user.name}" name="name" placeholder="Ввеите имя"/>
+        <input type="text" th:value="${user.lastName}" name="lastName" placeholder="Ввеите второе имя"/>
+        <input type="text" th:value="${user.email}" name="email" placeholder="Ввеите свой e-mail"/>
+        <button type="submit">Добавить пользователя</button>
+    </form>
+</div>
+</body>
+</html>

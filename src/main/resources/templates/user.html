@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Web Content</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:each="user : ${users}">
+  <p th:text="'Hello, '+ ${user.lastName} + ' ' + ${user.name} + '!'"> </p>
+  <a th:href="'/user/' + ${user.id}">Посмотреть</a>
+</div>
+
+<a href="user/add">Добавить пользователя</a>
+</body>
+</html>
